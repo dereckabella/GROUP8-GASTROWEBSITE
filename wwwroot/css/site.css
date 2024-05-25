@@ -1,0 +1,69 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.welcome-section {
+    padding: 0px 0;
+    background-image: url('https://images.unsplash.com/photo-1522184216316-9d7e9a9fe148');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn-custom {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}
+
+    .btn-custom:hover {
+        background-color: #c82333;
+    }
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

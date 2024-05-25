@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GastroWebsiteNew.Models.Place>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    body {
+    }
+
+    .card {
+        border: 0px;
+        transition: transform 0.3s ease-in-out; /* Add transition for transform */
+    }
+
+        .card:hover {
+            transform: scale(1.05); /* Scale the card slightly on hover */
+        }
+</style>
+<h2 class="display-1 mt-5 text-center text-dark">Places</h2>
+<p class="display-6 fs-5 text-center mb-5">Embark on a delightful exploration of culinary wonders as you venture into the vibrant world of restaurants and cafes. From cozy corner coffee shops to elegant fine dining establishments, each venue offers a unique ambiance and a tantalizing array of flavors to savor. Whether you're seeking a quick bite or a leisurely dining experience, let your senses guide you through a journey of gastronomic delights and memorable moments.</p>
+
+<div class="row mt-5">
+    @foreach (var place in Model)
+    {
+        <div class="col-md-4">
+            <div class="card shadow mb-4">
+                @if (place.ImagePaths != null && place.ImagePaths.Any())
+                {
+                    <img class="card-img-top" src="@Url.Content("~/images/" + place.ImagePaths.FirstOrDefault())" alt="Restaurant Image" style="height: 200px; object-fit: cover;">
+                }
+                <div class="card-body bg-dark text-light">
+                    <h3 class="card-title display-4 fs-3 fw-bold text-center text-warning">@place.Name</h3>
+                    <p class="card-text display-6 fs-6 text-center">@place.Type</p>
+                    <a href="@Url.Action("Details", new { id = place.Id })" class="btn btn-light display-6 fs-6" style="width: 100%; border-radius: 0px;">View</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
